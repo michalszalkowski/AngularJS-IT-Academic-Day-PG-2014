@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="szalekApp">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+	<title>Filters</title>
+	<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="app.js"></script>
+</head>
+
+<body>
+
+<div class="container">
+
+	<h1>#Filter</h1>
+
+	<section ng-controller="TestController">
+
+		<div class="well">
+			{{currentDate | date:'yyyy-MM-dd'}}<br/>
+			{{'czesc' | uppercase}}
+		</div>
+
+		<div class="well">
+			{{ 'Lorem Ipsum' | addExclamationMark }}<br/>
+			{{ 'Lorem Ipsum' | addExclamationMark:'Wow' }}<br/>
+		</div>
+
+		<div class="well">
+			{{testStr}}<br/>
+			{{testStr | revertWord}}<br/>
+			{{testStr | revertWord | revertWord}}<br/>
+		</div>
+
+
+	</section>
+</div>
+
+</body>
+</html>

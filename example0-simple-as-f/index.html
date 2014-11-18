@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+
+	<title>Example 0</title>
+
+	<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<script src="../bower_components/angular/angular.min.js"></script>
+
+	<style>
+		.well {
+			margin-top: 10px;
+		}
+	</style>
+
+</head>
+
+<body ng-app>
+
+	<span ng-init="post={desc:'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet facilisis arcu. Pellentesque nec nulla urna. Integer id velit eget velit pharetra maximus eu et nisl.'}"></span>
+
+	<div class="container">
+		<h1>#Data binding</h1>
+
+		<section class="well">
+			<input ng-model="title"/>
+			<h1>{{title}}</h1>
+		</section>
+
+		<section class="well">
+			<pre>{{person | json}}</pre>
+			<input ng-model="person.name"/>
+			<input ng-model="person.surname"/>
+		</section>
+
+		<section>
+
+			<div class="panel panel-default" ng-init="edit = false;">
+
+				<div class="panel-heading">
+					<a ng-click="edit = !edit;" href="#" class="btn btn-default " role="button">Toggle</a>
+				</div>
+
+				<div class="panel-body">
+					<section>
+						<p ng-show="!edit">{{post.desc}}</p>
+						<textarea ng-show="edit" ng-model="post.desc" class="form-control" rows="3"></textarea>
+					</section>
+				</div>
+
+			</div>
+		</section>
+
+	</div>
+
+</body>
+
+</html>

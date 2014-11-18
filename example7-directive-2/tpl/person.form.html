@@ -1,0 +1,28 @@
+<section>
+
+	<div class="row">
+		<div class="col-xs-12">
+			<div ng-show="message == 'error'" class="alert alert-danger" role="alert">
+				Oh Shit!, The form is invalid. :(
+			</div>
+			<div ng-show="message == 'success'" class="alert alert-success" role="alert">
+				Great!, New item added :)
+			</div>
+		</div>
+	</div>
+
+	<form novalidate name="myform" class="well">
+
+		Name:
+		<input type="text" autofocus required ng-model="person.name" class="form-control"/>
+
+		Surname:
+		<input type="text" required ng-model="person.surname" class="form-control"/>
+
+		Quote:
+		<input type="text" required ng-model="person.quote" class="form-control"/>
+
+		<br/>
+		<button ng-click="update()" class="btn btn-success">SAVE</button>
+	</form>
+</section>

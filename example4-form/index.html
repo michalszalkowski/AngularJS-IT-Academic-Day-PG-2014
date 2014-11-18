@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+	<meta charset="UTF-8">
+
+	<title>Example 4</title>
+
+	<link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+	<script src="../bower_components/angular/angular.min.js"></script>
+	<script src="app.js"></script>
+
+	<style>
+		.well {
+			margin-top: 20px;
+		}
+
+		input.ng-invalid.ng-dirty {
+			border: 2px solid red;
+		}
+
+		input.ng-valid.ng-dirty {
+			border: 2px solid green;
+		}
+	</style>
+
+</head>
+
+<body ng-app="app-pg">
+
+<section ng-controller="FormCtrl" class="container">
+
+	<h1>#Simple form</h1>
+
+	<div class="row">
+		<div class="col-xs-6">
+			<form novalidate name="myform" class="well">
+
+				Name:
+				<input type="text" required ng-model="user.name" class="form-control"/>
+
+				Email:
+				<input type="email" ng-model="user.email" class="form-control"/>
+
+				MinMaxlength:
+				<input type="text" maxlength="20" ng-model="user.minMaxlength" class="form-control"/>
+
+				MinMax:
+				<input type="number" max="40" min="10" ng-model="user.minMax" class="form-control"/>
+
+				Url:
+				<input type="url" ng-model="user.url" class="form-control"/>
+
+				<button ng-click="update()">SAVE</button>
+			</form>
+		</div>
+		<div class="col-xs-6">
+			<div class="well">
+				Log:
+				<pre>{{user | json}}</pre>
+				Form is valid:
+				<pre>{{myform.$valid}}</pre>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+</body>
+
+</html>
